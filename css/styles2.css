@@ -3,7 +3,7 @@
 
 body {
     margin: 0; 
-    background-image:url("images/NewBackground.png") ; 
+    background-image:url("/images/NewBackground.png") ; 
     background-size: cover; 
     background-position: center;
     /*display: flex; */
