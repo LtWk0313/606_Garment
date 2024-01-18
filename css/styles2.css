@@ -1,0 +1,176 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+    margin: 0; 
+    background-image:url("..//images/NewBackground.png") ; 
+    background-size: cover; 
+    background-position: center;
+    /*display: flex; */
+    /*justify-content: center; */
+    /*align-items: center; */
+}
+
+* {
+    box-sizing: border-box;  /* It means padding without expanding the box size */
+}
+
+.topbar1{
+    width: 1000px;
+    height: 350px;  /*original: 384px */
+    margin: 0 auto 0 auto;
+    text-align: center;
+}
+
+/*.logobox { */
+/*    width: 1000px; */  /* original value: 980 px*/
+/*    height: 200px; */
+/*    background-color: #a3bac3; */
+/*}  */
+
+.intro1 {
+    width: 1000px; /* original value: 980 px */ 
+    height: 200px; /* original value: 184 px */
+    /*background-color: #a3bac3; */
+}
+
+.intro1 h1{ 
+    font-size: 50px;
+    font-family: "Apple Symbols";  
+    color: #2c3877; 
+    line-height: -5px;
+    margin: 2px 0 2px 0;
+}
+
+.intro1 p{ 
+    font-size: 18px;
+    font-family: "Apple Symbols";  
+    color:#2c3877; 
+    line-height: 15px;
+    /*background-image:url("..//images/leather_tag.png"); */
+    background-size: cover;  /*keep centralized and in scale */
+    background-position: center;
+    margin: 0 50px 0 50px;
+   }
+
+.bottom1{
+    /*display: flex; */
+    display: grid;
+    grid-template-columns: 500px 500px;
+    grid-template-rows: 1000px;
+    grid-template-areas:  /*moving field size at form editor */
+    "rollinggallery description";
+    width: 1000px;
+    height: 400px;
+    margin: 0 auto 0 auto;
+    /*justify-content: center; */
+    /*text-align: center; */
+    /*align-items: right; */
+}
+
+.rollinggallery7{
+    grid-area:rollinggallery ;
+    display: flex; 
+    /*justify-content: center; */
+    margin: auto auto auto auto auto auto;
+    /*align-items: center; */
+    position: relative;
+    width: 115px; 
+    height: 115px; 
+    left: 12%;
+    transform-style: preserve-3d;
+    animation-name: roll;
+    animation-duration: 50s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    margin-top: 50px;
+}
+
+.bottom1:hover .rollinggallery7 { 
+  animation-play-state: paused; 
+} 
+
+/*.bottom1:hover .rollinggallery7 ul {
+  opacity: 100%;
+} */
+
+@keyframes roll
+{
+    0%
+    {
+       transform: perspective(1200px) rotateY(0deg);
+    } 
+    100%
+    {
+        transform: perspective(1200px) rotateY(-360deg);
+    }
+} 
+
+.rollinggallery7 span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i)* 25.7deg)) translateZ(250px);
+}
+
+.rollinggallery7 span img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rollinggallery7 span h3{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    font-size: 22px;
+    font-family: "Apple Symbols";  
+    color:#2c3877; 
+    background-color: rgba(255,255,255,1);
+    text-align: center;
+    transform: translateY(100px);
+}
+
+.rollinggallery7 span ul{
+    list-style-type: circle;
+    position: absolute;
+    top: 0;
+    right: 0%;
+    width: 120%;
+    object-fit: cover;
+    font-size: 15px;
+    font-family: "Apple Symbols";  
+    color:#2c3877; 
+    background-color: rgba(255,255,255,1);
+    text-align: center;
+    transform: translateY(190px);
+    opacity: 0%;
+}
+
+.description {
+    grid-area:description;
+    background:rgba(255,255,255,0.5);
+    height:300px;
+    margin-left:100px;
+}
+
+.description details{
+    font-size: 15px;
+    font-family: "Apple Symbols";  
+    color:#2c3877; 
+}
+
+.description summary{
+    font-size: 22px;
+    font-family: "Apple Symbols";  
+    color:#2c3877; 
+}
